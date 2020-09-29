@@ -6,9 +6,9 @@ This project intended to predict tags to StackOverflow question. It contains tex
 URL: https://blog.insightdatascience.com/contextual-topic-identification-4291d256a032
 
 The methods are:
-1) LDA
-2) BERT
-3) LDA and BERT
+1. LDA
+2.  BERT
+3. LDA and BERT
 
 The Tags prediction is carried using a DNN. 
 
@@ -21,13 +21,14 @@ URL: https://www.kaggle.com/stackoverflow/stacksample
 
 ## Usage:
 The main.py file contains 4 stages that can be run individually:
-Stage 0: Data preparation, which includes filtering the data to contain only the 100 most used tags in the database
-Stage 1: Question embedding and tags binarization
-Stage 2: Data visualization
-Stage 3: Classification
+1. Stage 0: Data preparation, which includes filtering the data to contain only the 100 most used tags in the database
+2. Stage 1: Question embedding and tags binarization
+3. Stage 2: Data visualization
+4. Stage 3: Classification
 
 
 ### main.py script options:
+```
 m 0 : LDA
 m 1 : BERT
 m 2 : LDA+BERT
@@ -35,8 +36,8 @@ s : starting stage (0), (1), (2) or (3)
 e : exiting stage (0), (1), (2) or (3)
 To run the entire program set s to 0 and e to 3
 
-### Run:
 python3 $main -m 2 -s 0 -e 3 --prj_dir=path/to/dir
+```
 
 ## License
 MIT License
