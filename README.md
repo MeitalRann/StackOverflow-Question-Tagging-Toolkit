@@ -10,9 +10,9 @@ The methods are:
 2) BERT
 3) LDA and BERT
 
-The Tags prediction was carried using a DNN. 
+The Tags prediction is carried using a DNN. 
 
-# DNN architecture:
+## DNN architecture:
 3 hidden layesr, 256 units each with relu activation. Output layer with 100 units and sigmoid activation function. For more info, see stage 3 in main.py.
 
 ## Data:
