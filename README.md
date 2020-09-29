@@ -13,32 +13,7 @@ The methods are:
 The Tags prediction was carried using a DNN. 
 
 # DNN architecture:
-Model: sequential
-Layer (type)                 Output Shape              Param #
-_________________________________________________________________
-dense (Dense)                (None, 281993, 256)       768       
-_________________________________________________________________
-batch_normalization (BatchNo (None, 281993, 256)       1024      
-_________________________________________________________________
-dropout (Dropout)            (None, 281993, 256)       0         
-_________________________________________________________________
-dense_1 (Dense)              (None, 281993, 256)       65792     
-_________________________________________________________________
-batch_normalization_1 (Batch (None, 281993, 256)       1024      
-_________________________________________________________________
-dropout_1 (Dropout)          (None, 281993, 256)       0         
-_________________________________________________________________
-dense_2 (Dense)              (None, 281993, 256)       65792     
-_________________________________________________________________
-batch_normalization_2 (Batch (None, 281993, 256)       1024      
-_________________________________________________________________
-dropout_2 (Dropout)          (None, 281993, 256)       0         
-_________________________________________________________________
-dense_3 (Dense)              (None, 281993, 100)       25700     
-=================================================================
-Total params: 161,124
-Trainable params: 159,588
-Non-trainable params: 1,536
+3 hidden layesr, 256 units each with relu activation. Output layer with 100 units and sigmoid activation function. For more info, see stage 3 in main.py.
 
 ## Data:
 The data used in this project is the StackSample: 10% of Stack Overflow Q&A.
