@@ -12,10 +12,9 @@ The methods are:
 
 The Tags prediction was carried using a DNN. 
 
-DNN architecture:
+# DNN architecture:
 Model: "sequential"
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param num
 =================================================================
 dense (Dense)                (None, 281993, 256)       768       
 _________________________________________________________________
