@@ -61,29 +61,6 @@ if __name__ == '__main__':
     exit = args.e
     prj_dir = args.prj_dir
 
-
-    # try:
-    #     opts, args = getopt.getopt(sys.argv[1:], 'hs:e:m:', ["prj_dir="])
-    # except getopt.GetoptError as err:
-    #     print(str(err))
-    #     sys.exit(1)
-    #
-    # if len(opts) != 4:
-    #     print("arguments are not enough.")
-    #     sys.exit(1)
-    #
-    # for opt, arg in opts:
-    #     if opt == '-h':
-    #         sys.exit(0)
-    #     elif opt == '-s':
-    #         stage = int(arg)
-    #     elif opt == '-e':
-    #         exit = int(arg)
-    #     elif opt == '-m':
-    #         method = int(arg)
-    #     elif opt == '--prj_dir':
-    #         prj_dir = str(arg)
-
     batch_size = 512
     n_tags = 100  # number of tags in the data
     gamma = 30  # parameter for relative importance of lda
@@ -189,7 +166,7 @@ if __name__ == '__main__':
 
         print("Divide to train and test data")
         train_input, test_input, train_labels, test_labels = train_test_split(
-            data, labels, test_size = 0.2)
+            data, labels, test_size = 0.2, random_state=seed_value)
         del data  # delete for memory reasons
         train_input = train_input.to_numpy()
         test_input = test_input.to_numpy()
@@ -230,10 +207,10 @@ if __name__ == '__main__':
         model.summary()
         # compile model: (get it readdy for training)
         model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=[keras.metrics.CategoricalAccuracy()])
-        log_dir = r"logs\\"+name+r'\\' + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        log_dir = prj_dir+r"logs\\"+name+r'\\' + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
         my_callbacks = [
             keras.callbacks.EarlyStopping(patience=8),
-            keras.callbacks.ModelCheckpoint(filepath=r".\\model\\"+name+r"\\model.{epoch:02d}-{val_loss:.2f}.h5"),
+            keras.callbacks.ModelCheckpoint(filepath=prj_dir+r".\\model\\"+name+r"\\model.{epoch:02d}-{val_loss:.2f}.h5"),
             keras.callbacks.TensorBoard(log_dir=log_dir)]
         epochs = 100
         # train model:
