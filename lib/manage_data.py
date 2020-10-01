@@ -43,7 +43,7 @@ def load_data(method, prj_dir):
         data = pickle.load(pickle_in)
         print('Uploaded LDA file- success!')
     else:
-        names = ["bert1.pickle"]#, "bert2.pickle"]#, "bert3.pickle"]
+        names = ["bert1.pickle", "bert2.pickle"]#, "bert3.pickle"]
         chunk_list = []
         for i in range(len(names)):
             pickle_in = open(prj_dir+r'\\data\\bert\\'+names[i], "rb")
@@ -68,6 +68,6 @@ def choose_data(method, prj_dir, gamma=15, data=None):
     else:
         data = load_data(1, prj_dir).reset_index(drop=True)
         lda = load_data(0, prj_dir)[:len(data)].reset_index(drop=True)
-        data = pd.concat([lda.multiply(gamma), data], axis=1)
+        data = pd.concat([lda.multiply(gamma), data], axis=1, ignore_index=True)
     return data, name
 
