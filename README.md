@@ -1,5 +1,5 @@
 # StackOverflow Question Tagging Toolkit
-This toolkit provides a StacOverflow question embedding using LDA/BERT/LDA+BERT and an DNN based tags prediction.
+This toolkit provides a StacOverflow question embedding using LDA/BERT/LDA+BERT and a DNN based tags prediction.
 
 ## Introduction
 This project intended to predict tags to StackOverflow question. It contains text embedding using 3 methods as suggested in:
